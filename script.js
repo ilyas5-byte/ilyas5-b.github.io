@@ -94,7 +94,7 @@ function buildAlbum() {
   for (let i = 1; i <= SLOTS; i++) {
     const figure = document.createElement("figure");
     const img = document.createElement("img");
-    img.src = `images/img${i}.jpg`;
+    img.src = `${i}.jpeg`;
     img.alt = "a liked story";
     img.loading = "lazy";
     img.onerror = () => {
