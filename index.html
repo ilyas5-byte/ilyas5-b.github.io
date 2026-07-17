@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>a little door, just for you</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="stage" id="stage">
+
+  <!-- SCREEN 1 : NAME -->
+  <section class="screen active" data-screen="name">
+    <p class="eyebrow">the door is locked</p>
+    <h1 class="prompt-title">who's asking?</h1>
+    <p class="sub">type your name to see if this door opens for you</p>
+    <form class="gate-form" id="form-name" autocomplete="off">
+      <input type="text" id="input-name" placeholder="your name" required>
+      <button type="submit">knock</button>
+    </form>
+  </section>
+
+  <!-- SCREEN 1b : WRONG NAME -->
+  <section class="screen" data-screen="wrong-name">
+    <p class="eyebrow error">error 403</p>
+    <h1 class="prompt-title">cannot load :(</h1>
+    <p class="sub">this page couldn't find you. maybe try the right name?</p>
+    <button class="retry" data-back="name">go back</button>
+  </section>
+
+  <!-- SCREEN 2 : DATES -->
+  <section class="screen" data-screen="dates">
+    <p class="eyebrow">step two</p>
+    <h1 class="prompt-title">prove it, then</h1>
+    <p class="sub">two dates only the two of us would know</p>
+    <form class="gate-form stacked" id="form-dates" autocomplete="off">
+      <label>her birthday
+        <input type="text" id="input-her-date" placeholder="e.g. 27 october" required>
+      </label>
+      <label>my birthday
+        <input type="text" id="input-my-date" placeholder="e.g. 5 january" required>
+      </label>
+      <button type="submit">check</button>
+    </form>
+  </section>
+
+  <!-- SCREEN 2b : WRONG DATES -->
+  <section class="screen" data-screen="wrong-dates">
+    <p class="eyebrow error">nope</p>
+    <h1 class="prompt-title">nice try haha</h1>
+    <p class="sub">those dates don't match. think harder ☺️</p>
+    <button class="retry" data-back="dates">try again</button>
+  </section>
+
+  <!-- SCREEN 3 : NUMBER -->
+  <section class="screen" data-screen="number">
+    <p class="eyebrow">last one</p>
+    <h1 class="prompt-title">one more secret</h1>
+    <p class="sub">enter the number. you know the one.</p>
+    <form class="gate-form" id="form-number" autocomplete="off">
+      <input type="text" inputmode="numeric" id="input-number" placeholder="7 digits" required>
+      <button type="submit">unlock</button>
+    </form>
+  </section>
+
+  <!-- SCREEN 3b : WRONG NUMBER -->
+  <section class="screen" data-screen="wrong-number">
+    <p class="eyebrow error">so close</p>
+    <h1 class="prompt-title">you almost didn't haha</h1>
+    <p class="sub">that's not it. one more shot.</p>
+    <button class="retry" data-back="number">try again</button>
+  </section>
+
+  <!-- SCREEN 4 : FINAL -->
+  <section class="screen final" data-screen="final">
+    <header class="final-header">
+      <p class="eyebrow">the door opens</p>
+      <h1 class="final-title">you miss me huuh <span class="wink">😉</span></h1>
+    </header>
+
+    <div class="row" id="row-album">
+      <h2>your liked stories <span class="row-tag">(album)</span></h2>
+      <p class="row-note">a few of my favorites of you</p>
+      <div class="album-grid" id="album-grid"></div>
+    </div>
+
+    <div class="row" id="row-peace">
+      <h2>you are enjoying the peace days huuh</h2>
+      <p class="row-note">quiet mornings, slow days, no rush &mdash; that's us right now. take a breath, you're doing great.</p>
+      <div class="peace-strip">
+        <span class="peace-dot"></span>
+        <span class="peace-dot"></span>
+        <span class="peace-dot"></span>
+      </div>
+    </div>
+
+    <div class="row" id="row-comments">
+      <h2>leave me something</h2>
+      <p class="row-note">write whatever's on your mind, I'll read it</p>
+      <form id="form-comment">
+        <textarea id="input-comment" placeholder="type here..." required></textarea>
+        <button type="submit">send it</button>
+      </form>
+      <p class="comment-status" id="comment-status"></p>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
