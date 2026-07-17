@@ -12,7 +12,7 @@ const VALID_NUMBER = "9634520";
 // Formspree (or any form backend) endpoint so you actually receive her comments.
 // 1) go to https://formspree.io, make a free form, copy the endpoint it gives you
 // 2) paste it below, replacing the placeholder
-const COMMENT_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const COMMENT_ENDPOINT = "https://formspree.io/f/mykrevop";
 
 /* ============================================================
    SCREEN NAVIGATION
